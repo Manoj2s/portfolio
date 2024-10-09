@@ -53,7 +53,7 @@ const Contact = () => {
           </div>
 
           <form
-            action="https://getform.io/f/placeYourEndpointHere"
+            action="https://getform.io/f/amdpzpdb"
             method="POST"
             className="max-w-6xl p-5 md:p-12"
             id="form"
@@ -73,6 +73,20 @@ const Contact = () => {
               id="email"
               placeholder="Your Email ..."
               name="email"
+              className="w-full py-2 pl-2 pr-4 mb-2 border border-purple-600 rounded-md"
+            />
+            <input
+              type="number"
+              id="number"
+              placeholder="Your phone number ..."
+              name="number"
+              className="w-full py-2 pl-2 pr-4 mb-2 border border-purple-600 rounded-md"
+            />
+            <input
+              type="text"
+              id="name"
+              placeholder="purpose of message"
+              name="name"
               className="w-full py-2 pl-2 pr-4 mb-2 border border-purple-600 rounded-md"
             />
             <textarea
