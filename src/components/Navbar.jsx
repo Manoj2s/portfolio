@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 z-50 w-full bg-opacity-70 backdrop-blur-md">
       <div
-        className="max-w-[1300px] mx-auto  flex justify-between text-gray-200
+        className="max-w-[1300px] mx-auto flex justify-between text-gray-200
         text-xl items-center px-12 h-20"
       >
         <Link
@@ -47,23 +47,24 @@ const Navbar = () => {
           Manoj Kumar
         </Link>
 
+        {/* Desktop menu with hover effects */}
         <ul className="z-10 hidden gap-12 cursor-pointer md:flex">
-          <li>
+          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
             <Link to="skills" smooth={true} offset={50} duration={500}>
               About
             </Link>
           </li>
-          <li>
+          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
             <Link to="portfolio" smooth={true} offset={50} duration={500}>
               Projects
             </Link>
           </li>
-          <li>
+          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
             <Link to="experience" smooth={true} offset={50} duration={500}>
               Experience
             </Link>
           </li>
-          <li>
+          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
             <Link to="contact" smooth={true} offset={50} duration={500}>
               Contact
             </Link>
@@ -74,6 +75,7 @@ const Navbar = () => {
           {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
         </div>
 
+        {/* Mobile menu */}
         <motion.div
           initial={false}
           animate={nav ? "open" : "closed"}
@@ -88,6 +90,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={50}
                 duration={500}
+                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
               >
                 About
               </Link>
@@ -99,6 +102,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={50}
                 duration={500}
+                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
               >
                 Projects
               </Link>
@@ -110,6 +114,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={50}
                 duration={500}
+                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
               >
                 Experience
               </Link>
@@ -121,6 +126,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={50}
                 duration={500}
+                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
               >
                 Contact
               </Link>
