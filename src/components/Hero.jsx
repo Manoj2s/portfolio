@@ -12,10 +12,9 @@ import {
 } from "react-icons/di";
 import { motion } from "framer-motion";
 
-
 const Hero = () => {
   return (
-    <div className="mt-24 max-w-[1200px] mx-auto relative">
+    <div id="Hero" className="mt-24 max-w-[1200px] mx-auto relative">
       <div className="grid gap-8 md:grid-cols-2 place-items-center">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -122,20 +121,23 @@ const Hero = () => {
         />
       </div>
 
+      {/* My Tech Stack Section */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 2 }}
-        className="flex flex-row items-center justify-center w-full px-12 py-24 text-7xl md:px-0"
+        className="flex flex-col items-center justify-center w-full px-4 py-24 md:px-0"
       >
-        <p className="mr-6 text-gray-200 md:text-xl">My Tech Stack</p>
-        <DiHtml5 className="mx-2 text-orange-600" />
-        <DiCss3 className="mx-2 text-blue-600" />
-        <DiJavascript1 className="mx-2 text-yellow-500" />
-        <DiReact className="mx-2 text-blue-500" />
-        <SiExpress className="mx-2 text-black-500 " />
-        <DiNodejsSmall className="mx-2 text-green-500" />
+        <p className="mb-6 text-xl text-gray-200 md:text-5xl">My Tech Stack</p>
+        <div className="flex flex-wrap justify-center gap-4 text-3xl md:text-7xl">
+          <DiHtml5 className="text-orange-600" />
+          <DiCss3 className="text-blue-600" />
+          <DiJavascript1 className="text-yellow-500" />
+          <DiReact className="text-blue-500" />
+          <SiExpress className="text-black-500" />
+          <DiNodejsSmall className="text-green-500" />
+        </div>
       </motion.div>
 
       <div className="absolute inset-0 hidden md:block">

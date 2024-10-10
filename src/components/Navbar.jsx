@@ -17,6 +17,7 @@ const Navbar = () => {
   const menuVariants = {
     open: {
       x: "0",
+      opacity: 1,
       transition: {
         stiffness: 20,
         damping: 15,
@@ -24,6 +25,7 @@ const Navbar = () => {
     },
     closed: {
       x: "-100%",
+      opacity: 0,
       transition: {
         stiffness: 20,
         damping: 15,
@@ -32,50 +34,49 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 z-50 w-full bg-opacity-70 backdrop-blur-md">
-      <div
-        className="max-w-[1300px] mx-auto flex justify-between text-gray-200
-        text-xl items-center px-12 h-20"
-      >
+    <div className="fixed top-0 left-0 z-50 w-full bg-opacity-70 backdrop-blur-md bg-black">
+      <div className="max-w-[1300px] mx-auto flex justify-between text-gray-200 text-xl items-center px-12 h-20">
+        {/* Brand Name */}
         <Link
           className="z-10 hidden gap-12 cursor-pointer md:flex"
-          to="Hero"
+          to="hero" // Scroll to the Hero section
           smooth={true}
-          offset={50}
+          offset={-50} // Adjust offset to handle fixed navbar height
           duration={500}
         >
           Manoj Kumar
         </Link>
 
-        {/* Desktop menu with hover effects */}
+        {/* Desktop Menu */}
         <ul className="z-10 hidden gap-12 cursor-pointer md:flex">
-          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
-            <Link to="skills" smooth={true} offset={50} duration={500}>
-              About
-            </Link>
-          </li>
-          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
-            <Link to="portfolio" smooth={true} offset={50} duration={500}>
-              Projects
-            </Link>
-          </li>
-          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
-            <Link to="experience" smooth={true} offset={50} duration={500}>
-              Experience
-            </Link>
-          </li>
-          <li className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110">
-            <Link to="contact" smooth={true} offset={50} duration={500}>
-              Contact
-            </Link>
-          </li>
+          {["About", "Projects", "Experience", "Contact"].map((item) => (
+            <li
+              key={item}
+              className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
+            >
+              <Link
+                to={item.toLowerCase()}
+                smooth={true}
+                offset={-50}
+                duration={500}
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        <div onClick={toggleNav} className="z-50 text-gray-200 md:hidden">
+        {/* Mobile Menu Icon */}
+        <button
+          onClick={toggleNav}
+          aria-label="Toggle navigation menu"
+          aria-expanded={nav}
+          className="z-50 text-gray-200 md:hidden"
+        >
           {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-        </div>
+        </button>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu */}
         <motion.div
           initial={false}
           animate={nav ? "open" : "closed"}
@@ -83,54 +84,20 @@ const Navbar = () => {
           className="fixed top-0 left-0 z-40 w-full min-h-screen bg-gray-900"
         >
           <ul className="mt-24 space-y-8 text-4xl font-semibold text-center">
-            <li>
-              <Link
-                to="skills"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="portfolio"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="experience"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
-              >
-                Experience
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
-                className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
-              >
-                Contact
-              </Link>
-            </li>
+            {["About", "Projects", "Experience", "Contact"].map((item) => (
+              <li key={item}>
+                <Link
+                  to={item.toLowerCase()}
+                  onClick={closeNav}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}
+                  className="transition-transform duration-300 hover:text-blue-400 hover:underline hover:scale-110"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </motion.div>
       </div>

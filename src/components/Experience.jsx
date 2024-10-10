@@ -29,7 +29,7 @@ const Experience = () => {
       <h1 className="mb-12 text-4xl font-bold text-center text-gray-200">
         Experience
       </h1>
-      <motion.div className="space-y-8" initial="hidden" animate="visible">
+      <motion.div className="space-y-8" flex initial="hidden" animate="visible">
         {experiences.map((experience, index) => (
           <Reveal key={index}>
             <motion.div
