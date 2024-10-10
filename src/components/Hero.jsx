@@ -28,7 +28,7 @@ const Hero = () => {
               1000,
               "WebDeveloper",
               1000,
-              "UI/UX Designer",
+              "UI Designer",
               1000,
             ]}
             speed={50}

@@ -36,12 +36,11 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 z-50 w-full bg-opacity-70 backdrop-blur-md bg-black">
       <div className="max-w-[1300px] mx-auto flex justify-between text-gray-200 text-xl items-center px-12 h-20">
-        {/* Brand Name */}
         <Link
           className="z-10 hidden gap-12 cursor-pointer md:flex"
-          to="hero" // Scroll to the Hero section
+          to="Hero"
           smooth={true}
-          offset={-50} // Adjust offset to handle fixed navbar height
+          offset={-50} 
           duration={500}
         >
           Manoj Kumar

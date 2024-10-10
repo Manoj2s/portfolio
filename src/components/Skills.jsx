@@ -1,4 +1,4 @@
-import React from "react"
+
 import {
   DiHtml5,
   DiCss3,
@@ -45,7 +45,7 @@ const Skills = () => {
   return (
     <div
       className="max-w-[650px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
-      id="skills"
+      id="about"
     >
       <Reveal>
         <h2 className="mb-4 text-3xl font-bold text-center">Skills</h2>

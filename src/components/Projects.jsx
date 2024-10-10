@@ -60,7 +60,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="max-w-[1000px] mx-auto p-6 md:my-20" id="portfolio">
+    <div className="max-w-[1000px] mx-auto p-6 md:my-20" id="projects">
       <h2 className="mb-8 text-3xl font-bold text-gray-200">Projects</h2>
       {projects.map((project, index) => (
         <Reveal key={index}>
