@@ -11,8 +11,15 @@ import {
   DiReact,
 } from "react-icons/di";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const Hero = () => {
+
+  useEffect(() => {
+  
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div id="Hero" className="mt-24 max-w-[1200px] mx-auto relative">
       <div className="grid gap-8 md:grid-cols-2 place-items-center">
