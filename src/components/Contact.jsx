@@ -1,17 +1,11 @@
 import Reveal from "./Reveal";
-import { useRef, useEffect } from "react";
+// import { useRef, useEffect } from "react";
 
 
 
 
 const Contact = () => {
-  const nameInputRef = useRef(null);
-
-  useEffect(() => {
-    if (nameInputRef.current) {
-      nameInputRef.current.focus();
-    }
-  }, []);
+  
   return (
     <div className="px-6 max-w-[1000px] mx-auto md:my-12" id="contact">
       <Reveal>
@@ -63,7 +57,6 @@ const Contact = () => {
             </p>
 
             <input
-              ref={nameInputRef}
               type="text"
               id="name"
               placeholder="Your Name..."
