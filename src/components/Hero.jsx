@@ -128,7 +128,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* My Tech Stack Section */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

@@ -5,10 +5,8 @@ import { useRef, useEffect } from "react";
 
 
 const Contact = () => {
-  // Create a ref for the first input field
   const nameInputRef = useRef(null);
 
-  // Set focus to the first input field when the component mounts
   useEffect(() => {
     if (nameInputRef.current) {
       nameInputRef.current.focus();
@@ -24,7 +22,7 @@ const Contact = () => {
                 About <span>Me</span>
               </h3>
               <p className="w-11/12 mx-auto leading-7 text-justify">
-                As a dedicated software development student at Navgurukul, I
+                As a dedicated software development student at NavGurukul, I
                 have built a strong foundation in front-end technologies like
                 JavaScript, React.js, HTML, and CSS. I am driven by a passion to
                 bring ideas to life through code and look forward to applying my
