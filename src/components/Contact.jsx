@@ -1,11 +1,6 @@
 import Reveal from "./Reveal";
-// import { useRef, useEffect } from "react";
-
-
-
 
 const Contact = () => {
-  
   return (
     <div className="px-6 max-w-[1000px] mx-auto md:my-12" id="contact">
       <Reveal>
